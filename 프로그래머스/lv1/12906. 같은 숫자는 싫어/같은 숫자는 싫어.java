@@ -3,10 +3,17 @@ import java.util.*;
 public class Solution {
     public List solution(int []arr) {
         List<Integer> answer = new ArrayList<>();
-		answer.add(arr[0]);
+		Stack<Integer> st = new Stack<Integer>();
 		for(int i : arr) {
-			if(i != answer.get(answer.size()-1)) {
+			if(st.empty()) {
+				st.push(i);
 				answer.add(i);
+			}
+			else {
+				if(st.peek() != i) {
+					st.push(i);
+					answer.add(i);
+				}
 			}
 		}
 
