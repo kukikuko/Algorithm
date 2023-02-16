@@ -5,17 +5,12 @@ class Solution {
         int x = 0;
 		int y = 0;
 		
-		for(int i=0; i<sizes.length; i++) {
-			for(int j=0; j<2; j++) {
-				if(x < sizes[i][j]) x = sizes[i][j];
-			}
-		}
-		
-		for(int i=0; i<sizes.length; i++) {
-			int temp = 0;
-			if(sizes[i][0] > sizes[i][1]) temp = sizes[i][1];
-			else temp = sizes[i][0];
-			if(temp > y) y = temp;
+		for(int[] size : sizes) {
+			int max = Math.max(size[0], size[1]);
+			int min = Math.min(size[0], size[1]);
+			
+			x = Math.max(max, x);
+			y = Math.max(min, y);
 		}
 		answer = x * y;
         
