@@ -1,16 +1,15 @@
 class Solution {
     public int[] solution(int[] arr) {
-        int index = 0;
-        for(int i : arr) {
-            index += i;
+        int length = 0;
+        for(int num : arr) {
+            length += num;
         }
-        int[] answer = new int[index];
-        index = 0;
         
-        for(int i : arr) {
-            for(int j=0; j<i; j++) {
-                answer[index++] = i;
-            }
+        int[] answer = new int[length];
+        int index = 0;
+        
+        for(int num : arr) {
+            for(int i=0; i<num; i++) answer[index++] = num;
         }
         
         return answer;
