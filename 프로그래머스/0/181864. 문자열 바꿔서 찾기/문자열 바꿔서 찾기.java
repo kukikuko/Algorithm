@@ -1,15 +1,11 @@
 class Solution {
     public int solution(String myString, String pat) {
-        int answer = 0;
-        String revString = "";
+        StringBuffer sb = new StringBuffer();
         
-        for(int i=0; i<myString.length(); i++) {
-            if(myString.charAt(i) == 'A') revString += "B";
-            else revString += "A";
-        }
+        for (char ch : myString.toCharArray())
+            if (ch == 'A') sb.append("B");
+            else sb.append("A");
         
-        if(revString.contains(pat)) return 1;
-        
-        return 0;
+        return sb.toString().contains(pat) ? 1 : 0;
     }
 }
