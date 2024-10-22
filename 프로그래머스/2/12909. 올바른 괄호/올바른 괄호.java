@@ -1,17 +1,16 @@
 class Solution {
     boolean solution(String s) {
-        boolean answer = false;
-        int cnt = 0;
+        String[] arr = s.split("");
+        int index = 0;
         
-        for(int i=0; i<s.length(); i++) {
-            if(s.charAt(i) == '(') cnt++;
-            else cnt--;
+        for(String st : arr) {
+            if(st.equals("(")) ++index;
+            else --index;
             
-            if(cnt < 0) break;
-        }
+            if(index < 0) break;
+        } 
         
-        if(cnt == 0) answer = true;
-
-        return answer;
+        if(index == 0) return true;
+        else return false;
     }
 }
