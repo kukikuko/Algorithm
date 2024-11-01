@@ -1,12 +1,9 @@
 class Solution {
     public String solution(String my_string, int s, int e) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(my_string.substring(0,s));
-        for(int i=e; i>=s; i--) {
-            sb.append(String.valueOf(my_string.charAt(i)));
-        }
-        sb.append(my_string.substring(e+1));
+        StringBuilder sb = 
+            new StringBuilder(my_string.substring(s, e+1));
+        sb.reverse();
         
-        return sb.toString();
+        return my_string.substring(0, s) + sb.toString() + my_string.substring(e+1);
     }
 }
