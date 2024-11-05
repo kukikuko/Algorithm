@@ -1,15 +1,14 @@
 class Solution {
     boolean solution(String s) {
-        s = s.toLowerCase();
         int cnt = 0;
-        
-        for(int i=0; i<s.length(); i++) {
-            if(s.charAt(i) == 'p') cnt++;
-            else if(s.charAt(i) == 'y') cnt--;
+        s = s.toLowerCase();
+
+        char[] arr = s.toCharArray();
+        for(char c :arr) {
+            if(c == 'p') cnt++;
+            else if(c == 'y') cnt--;
         }
-        
-        if(cnt != 0) return false;
-        
-        return true;
+
+        return cnt == 0 ? true : false;
     }
 }
