@@ -1,18 +1,12 @@
-import java.util.Arrays;
+import java.util.*;
 class Solution {
     public long solution(long n) {
-        long answer = 0;
+        String[] list = String.valueOf(n).split("");
+        Arrays.sort(list);
         
-        String s = String.valueOf(n);
-		char[] ch = s.toCharArray();
-		Arrays.sort(ch);
-		s = "";
-		
-		for(char c : ch) {
-			s = c + s;
-		}
-		answer = Long.parseLong(s);
+        StringBuilder sb = new StringBuilder();
+        for(String s : list) sb.append(s);
         
-        return answer;
+        return Long.parseLong(sb.reverse().toString());
     }
 }
