@@ -9,14 +9,15 @@ public class Main {
 
         StringTokenizer st = new StringTokenizer(br.readLine());
 
-        double day = Integer.parseInt(st.nextToken());
-        double night = Integer.parseInt(st.nextToken());
-        double height = Integer.parseInt(st.nextToken());
+        int up = Integer.parseInt(st.nextToken());
+        int down = Integer.parseInt(st.nextToken());
+        int height = Integer.parseInt(st.nextToken());
 
-        int cnt = 1;
-        cnt += Math.ceil((height - day) / (day - night));
+        int day = (height - down) / (up - down);
+        if ((height - down) % (up - down) != 0)
+            day++;
 
-        bw.write(String.valueOf(cnt));
+        bw.write(String.valueOf(day));
 
         br.close();
         bw.flush();
