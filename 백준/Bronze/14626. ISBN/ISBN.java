@@ -5,7 +5,7 @@ import java.io.OutputStreamWriter;
 
 public class Main {
 
-    public void Solution() throws Exception {
+    public void solution() throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
@@ -20,15 +20,12 @@ public class Main {
         }
 
         for (int i = 0; i < 10; i++) {
-            if (index % 2 == 0 && (i + sum) % 10 == 0) {
-                bw.write(String.valueOf(i));
-                break;
-            } else if (index % 2 != 0 && (i * 3 + sum) % 10 == 0) {
+            int trial = (index % 2 == 0) ? i : i * 3;
+            if((sum + trial) % 10 == 0) {
                 bw.write(String.valueOf(i));
                 break;
             }
         }
-
 
         br.close();
         bw.flush();
@@ -36,6 +33,6 @@ public class Main {
     }
 
     public static void main(String[] args) throws  Exception{
-        new Main().Solution();
+        new Main().solution();
     }
 }
