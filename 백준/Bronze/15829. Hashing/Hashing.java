@@ -1,34 +1,30 @@
-import java.util.Scanner;
+import java.io.*;
 
 public class Main {
 
-	static long doF(int n) {
-		long sum = 1;
-		if (n == 0)
-			return 1;
-		else {
-			for (int i = 1; i <= n; i++) {
-				sum *= 31;
-			}
-			return sum;
-		}
-	}
+    public void solution() throws Exception {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-	public static void main(String[] args) {
+        int length = Integer.parseInt(br.readLine());
+        char[] arr = br.readLine().toCharArray();
 
-		Scanner scan = new Scanner(System.in);
+        long sum = 0L;
+        long pow = 1;
 
-		String L = scan.nextLine();
-		String M = scan.nextLine();
-		long result = 0;
+        for (char ch : arr) {
+            sum += (long) ((ch - 96) * pow);
+            pow = (pow * 31) % 1234567891;
+        }
 
-		for (int i = 0; i < Integer.parseInt(L); i++) {
-			int a = M.charAt(i) - 'a' + 1;
-			result += (long) a * doF(i);
-		}
+        bw.write(Long.toString(sum % 1234567891));
 
-		System.out.println(result);
+        br.close();
+        bw.flush();
+        bw.close();
+    }
 
-	}
-
+    public static void main(String[] args) throws Exception{
+        new Main().solution();
+    }
 }
