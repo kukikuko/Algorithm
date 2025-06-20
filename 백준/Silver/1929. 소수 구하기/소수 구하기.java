@@ -15,22 +15,27 @@ public class Main {
             int last = Integer.parseInt(st.nextToken());
 
             StringBuilder sb = new StringBuilder();
+            boolean[] isPrime = new boolean[last + 1];
+            for (int i = 2; i <= last; i++) {
+                isPrime[i] = true;
+            }
+
+            for (int i = 2; i <= Math.sqrt(last); i++) {
+                if(isPrime[i]) {
+                    for (int j = i * i; j <= last; j += i) {
+                        isPrime[j] = false;
+                    }
+                }
+            }
+
             for (int i = first; i <= last; i++) {
-                if(isPrime(i)) sb.append(i + "\n");
+                if(isPrime[i]) sb.append(i + "\n");
             }
 
             bw.write(sb.toString());
         }
     }
-
-    boolean isPrime(int num) {
-        if (num < 2) return false;
-        for (int i = 2; i <= Math.sqrt(num); i++) {
-            if(num % i == 0) return false;
-        }
-        return true;
-    }
-
+    
     public static void main(String[] args) throws Exception{
         new Main().solution();
     }
