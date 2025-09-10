@@ -3,10 +3,10 @@ using System;
 public class Solution {
     public int solution(int a, int b) {
         
-        string x = String.Concat(a, b);
-        string y = String.Concat(b, a);
+        int x = int.Parse(String.Concat(a, b));
+        int y = int.Parse(String.Concat(b, a));
         
-        int answer = String.CompareOrdinal(x, y) > 0 ? int.Parse(x) : int.Parse(y);
+        int answer = Math.Max(x, y);
         
         return answer;
     }
