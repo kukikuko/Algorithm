@@ -10,8 +10,7 @@ public class Solution {
             a *= i;
             b += i;
         }
-        b *= b;
         
-        return a > b ? 0 : 1;
+        return a > b * b ? 0 : 1;
     }
 }
