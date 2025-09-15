@@ -1,10 +1,10 @@
 # [level 0] 수열과 구간 쿼리 2 - 181923 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181923?language=java) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/181923) 
 
 ### 성능 요약
 
-메모리: 79.8 MB, 시간: 5.02 ms
+메모리: 31.4 MB, 시간: 0.85 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 09월 05일 14:28:14
+2025년 09월 15일 09:21:12
 
 ### 문제 설명
 
